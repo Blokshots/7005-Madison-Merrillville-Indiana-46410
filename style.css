@@ -751,15 +751,18 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
 }
 
 .info-hotspot-modal .info-hotspot-text {
-  position: absolute;
-  top: 110px;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
-  padding: 10px;
-  background-color: rgb(58,68,84);
+  position: relative;
+  margin: 120px 10px 20px 10px;  /* top/side/bottom spacing */
+  padding: 12px;
+  max-width: 90%;
+  width: fit-content;
+  max-height: 35vh;
   background-color: rgba(58,68,84,0.8);
+  border-radius: 10px;
   overflow-y: auto;
+
+  font-size: 1em;
+  line-height: 1.4;
   opacity: 0;
   -webkit-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
@@ -769,6 +772,12 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   -ms-user-select: text;
   user-select: text;
 }
+
+.info-hotspot-modal.visible .info-hotspot-text {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out 0.4s;
+}
+
 
 .info-hotspot-modal.visible .info-hotspot-text {
   opacity: 1;
